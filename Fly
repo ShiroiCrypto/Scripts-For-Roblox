@@ -1,26 +1,5 @@
-Target = "THEVICTIM"
-
-game.Players.LocalPlayer.Character.Humanoid.Name = 1
-local l = game.Players.LocalPlayer.Character["1"]:Clone()
-l.Parent = game.Players.LocalPlayer.Character
-l.Name = "Humanoid"
-wait()
-game.Players.LocalPlayer.Character["1"]:Destroy()
-game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
-game.Players.LocalPlayer.Character.Animate.Disabled = true
-wait()
-game.Players.LocalPlayer.Character.Animate.Disabled = false
-game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
-for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-end
-wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Target].Character.HumanoidRootPart.CFrame
-wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Target].Character.HumanoidRootPart.CFrame
-wait()
 repeat wait()
-   until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
+    until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
 local mouse = game.Players.LocalPlayer:GetMouse()
 repeat wait() until mouse
 local plr = game.Players.LocalPlayer
@@ -31,7 +10,7 @@ local ctrl = {f = 0, b = 0, l = 0, r = 0}
 local lastctrl = {f = 0, b = 0, l = 0, r = 0}
 local maxspeed = 50
 local speed = 0
-
+ 
 function Fly()
 local bg = Instance.new("BodyGyro", torso)
 bg.P = 9e4
@@ -99,4 +78,3 @@ ctrl.r = 0
 end
 end)
 Fly()
-game.Players.LocalPlayer.Character.Humanoid.PlayformStand = false
